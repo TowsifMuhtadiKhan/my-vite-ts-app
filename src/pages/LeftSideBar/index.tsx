@@ -43,14 +43,14 @@ const LeftPart = () => {
 			<Stack
 				sx={{
 					width: { xs: '100%', md: '60%' },
-					p: { xs: 10, md: 0 },
+					p: { xs: 5, md: 0 },
 					pt: { xs: 10, md: 15 },
 				}}
 			>
 				{' '}
 				<Typography
 					fontSize={{
-						xs: '34px', // Smaller font size on extra-small devices
+						xs: '40px', // Smaller font size on extra-small devices
 						md: '46px', // Larger font size on medium and larger devices
 					}}
 					fontWeight={'700'}
@@ -59,7 +59,7 @@ const LeftPart = () => {
 				</Typography>
 				<Typography
 					fontSize={{
-						xs: '26px',
+						xs: '30px',
 						md: '36px',
 					}}
 					fontWeight={'500'}
@@ -75,7 +75,14 @@ const LeftPart = () => {
 				>
 					I craft seamless digital solutions across web, mobile, and beyond.
 				</Typography>
-				<Box mt={'26px'}>
+				<Box
+					mt={'26px'}
+					sx={{
+						display: 'flex', // Ensure items are laid out as flex items
+						flexDirection: { xs: 'column', sm: 'row' }, // Stack vertically on extra-small screens
+						gap: { xs: 2, sm: 0 }, // Vertical gap on xs, no gap on sm and above
+					}}
+				>
 					<a
 						href="https://github.com/TowsifMuhtadiKhan"
 						target="_blank"

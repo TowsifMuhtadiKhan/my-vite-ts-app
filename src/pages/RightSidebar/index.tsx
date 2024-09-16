@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 const RightSide = () => {
 	const titles = ['Frontend Engineer', 'Graphics Designer', 'UI Designer'];
-	const [currentTitle, setCurrentTitle] = useState('');
+	const [, setCurrentTitle] = useState('');
 	const [titleIndex, setTitleIndex] = useState(0);
 	const [charIndex, setCharIndex] = useState(0);
 
@@ -94,7 +94,7 @@ const RightSide = () => {
 			<Stack
 				sx={{
 					width: { xs: '100%', md: '60%' },
-					p: { xs: 10, md: 0 },
+					p: { xs: 5, md: 0 },
 					pt: { xs: 0, md: 15 },
 				}}
 			>
