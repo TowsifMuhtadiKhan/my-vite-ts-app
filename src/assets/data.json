@@ -1,0 +1,55 @@
+{
+	"name": "Towsif Muhtadi Khan",
+	"titles": ["Frontend Engineer", "Graphics Designer", "UI Designer"],
+	"description": "I am a Frontend Developer and UI/Graphics Designer, focused on creating responsive, user-friendly interfaces that blend functionality and aesthetics. My passion lies in delivering seamless, user-centric digital experiences.",
+	"links": {
+		"github": "https://github.com/TowsifMuhtadiKhan",
+		"resume": "https://drive.google.com/file/d/1jlY1VG0X9mJ591Okxtv7vc5x6KHkdZRg/view?usp=sharing"
+	},
+	"aboutMe": "I am a Computer Science graduate specializing in frontend development and UI/graphics design. With expertise in HTML, CSS, JavaScript, and React, I create responsive, user-friendly interfaces that blend functionality with aesthetics. My passion for UI/UX design helps me craft visually appealing digital experiences, ensuring a seamless user journey. I enjoy collaborating with cross-functional teams, merging design and development to deliver high-quality web applications. I'm continuously learning and striving to push the boundaries of design and technology.",
+	"skills": [
+		{
+			"title": "Programming Languages",
+			"list": [
+				{ "name": "C", "logo": "/path-to-c-logo.png" },
+				{ "name": "Python", "logo": "/path-to-python-logo.png" },
+				{ "name": "PHP", "logo": "/path-to-php-logo.png" },
+				{ "name": "React JS", "logo": "/path-to-react-logo.png" },
+				{ "name": "HTML", "logo": "/path-to-html-logo.png" },
+				{ "name": "CSS", "logo": "/path-to-css-logo.png" },
+				{ "name": "Tailwind CSS", "logo": "/path-to-tailwind-logo.png" }
+			]
+		},
+		{
+			"title": "Frontend Development",
+			"list": [
+				{ "name": "React", "logo": "/path-to-react-logo.png" },
+				{ "name": "Redux", "logo": "/path-to-redux-logo.png" },
+				{ "name": "Material UI", "logo": "/path-to-materialui-logo.png" },
+				{ "name": "TypeScript", "logo": "/path-to-typescript-logo.png" },
+				{ "name": "Tailwind CSS", "logo": "/path-to-tailwind-logo.png" },
+				{ "name": "Material UI", "logo": "/path-to-materialui-logo.png" }
+			]
+		},
+		{
+			"title": "Backend Development",
+			"list": [{ "name": "MySQL", "logo": "/path-to-mysql-logo.png" }]
+		}
+	],
+	"experiences": [
+		{
+			"position": "Frontend Engineer",
+			"company": "Sense & Respond Software LLC",
+			"duration": "November 2023 - Present",
+			"description": "Enhancing user experiences and developing skills while working at Sense & Respond Software LLC.",
+			"skills": ["React.js", "Redux Toolkit", "Material UI", "TypeScript", "API"]
+		},
+		{
+			"position": "Junior Web Developer",
+			"company": "CPSD Technologies Ltd.",
+			"duration": "February 2023 - October 2023",
+			"description": "Enhancing user experiences and developing skills while working at CPSD Technologies Ltd.",
+			"skills": ["HTML", "CSS", "Tailwind CSS", "jS", "API"]
+		}
+	]
+}

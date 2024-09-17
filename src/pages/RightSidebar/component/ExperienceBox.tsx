@@ -5,7 +5,7 @@ interface ExperienceCardProps {
 	company: string;
 	duration: string;
 	description: string;
-	skills: string[]; // Assuming skills are an array of strings
+	skills: string[];
 }
 
 const ExperienceCard = ({

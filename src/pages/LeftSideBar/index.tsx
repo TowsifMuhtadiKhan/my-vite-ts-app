@@ -1,43 +1,52 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-
+import data from '../../assets/data.json';
+import Navbar from './navbar';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 const LeftPart = () => {
-	const titles = ['Frontend Engineer', 'Graphics Designer', 'UI Designer'];
+	const titles = data.titles;
 	const [currentTitle, setCurrentTitle] = useState('');
 	const [titleIndex, setTitleIndex] = useState(0);
 	const [charIndex, setCharIndex] = useState(0);
+	const [selectedIndex, setSelectedIndex] = useState(0);
+
+	const handleScroll = (id: string, index: number) => {
+		setSelectedIndex(index);
+		const section = document.getElementById(id);
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 
 	useEffect(() => {
-		// Split the current title into characters
 		const chars = titles[titleIndex].split('');
 
-		// Start typing out the title character by character
 		if (charIndex < chars.length) {
 			const timeoutId = setTimeout(() => {
 				setCurrentTitle((current) => current + chars[charIndex]);
 				setCharIndex(charIndex + 1);
-			}, 100); // Time between characters appearing
+			}, 100);
 
 			return () => clearTimeout(timeoutId);
 		} else {
-			// Prepare to transition to the next title
 			const timeoutId = setTimeout(() => {
-				// Cycle to the next title, but start displaying it immediately
 				const nextTitleIndex = (titleIndex + 1) % titles.length;
-				setCurrentTitle(titles[nextTitleIndex].substring(0, 1)); // Start the next title with the first character
+				setCurrentTitle(titles[nextTitleIndex].substring(0, 1));
 				setTitleIndex(nextTitleIndex);
-				setCharIndex(1); // Start from the second character for the next cycle
-			}, 2000); // Delay before switching to the next title
+				setCharIndex(1);
+			}, 2000);
 
 			return () => clearTimeout(timeoutId);
 		}
 	}, [charIndex, titles, titleIndex]);
 	return (
 		<Box
+			id="home"
 			sx={{
-				display: 'flex', // Sets display to flex to use flexbox properties
-				justifyContent: { xs: 'center', md: 'flex-end' }, // Centers content horizontally
-				width: '100%', // Adjust width as needed, 100% to fill the container
+				display: 'flex',
+				justifyContent: { xs: 'center', md: 'flex-end' },
+				width: '100%',
 			}}
 		>
 			<Stack
@@ -50,12 +59,12 @@ const LeftPart = () => {
 				{' '}
 				<Typography
 					fontSize={{
-						xs: '40px', // Smaller font size on extra-small devices
-						md: '46px', // Larger font size on medium and larger devices
+						xs: '40px',
+						md: '46px',
 					}}
 					fontWeight={'700'}
 				>
-					Towsif Muhtadi khan
+					{data.name}
 				</Typography>
 				<Typography
 					fontSize={{
@@ -72,49 +81,55 @@ const LeftPart = () => {
 					fontWeight={'400'}
 					mt={'26px'}
 					color="rgba(255, 255, 255, 0.5)"
+					pr={2}
 				>
-					I craft seamless digital solutions across web, mobile, and beyond.
+					{data.description}
 				</Typography>
 				<Box
 					mt={'26px'}
 					sx={{
-						display: 'flex', // Ensure items are laid out as flex items
-						flexDirection: { xs: 'column', sm: 'row' }, // Stack vertically on extra-small screens
-						gap: { xs: 2, sm: 0 }, // Vertical gap on xs, no gap on sm and above
+						display: 'flex',
+						flexDirection: { xs: 'column', sm: 'row' },
+						gap: { xs: 2, sm: 0 },
 					}}
 				>
 					<a
-						href="https://github.com/TowsifMuhtadiKhan"
+						href={data.links.github}
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ textDecoration: 'none' }}
 					>
 						<Button
+							startIcon={<GitHubIcon />}
 							sx={{
-								bgcolor: 'rgba(255, 255, 255, 0.4)', // Background color using theme's primary color
-								color: 'white', // Text color
+								bgcolor: 'rgba(255, 255, 255, 0.4)',
+								color: 'white',
 								'&:hover': {
-									bgcolor: 'rgba(255, 255, 255, 0.2)', // Darker on hover
+									bgcolor: 'rgba(255, 255, 255, 0.2)',
 								},
 								mr: 2,
+								padding: 1,
 							}}
 						>
 							GitHub Profile
 						</Button>
 					</a>
 					<a
-						href="https://drive.google.com/drive/folders/1reYxUwhGxdc1q1IOiJFK-Ygr24dhXE5Z"
+						href={data.links.resume}
+						download
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ textDecoration: 'none' }}
 					>
 						<Button
+							startIcon={<FileDownloadIcon />}
 							sx={{
-								bgcolor: 'rgba(90, 223, 203, 0.5)', // Background color using theme's secondary color
-								color: 'white', // Text color
+								bgcolor: 'rgba(90, 223, 203, 0.5)',
+								color: 'white',
 								'&:hover': {
-									bgcolor: 'rgba(90, 223, 203, 0.2)', // Darker on hover
+									bgcolor: 'rgba(90, 223, 203, 0.2)',
 								},
+								padding: 1,
 							}}
 						>
 							Download Resume
@@ -122,6 +137,7 @@ const LeftPart = () => {
 					</a>
 				</Box>
 			</Stack>
+			<Navbar selectedIndex={selectedIndex} handleScroll={handleScroll} />
 		</Box>
 	);
 };
