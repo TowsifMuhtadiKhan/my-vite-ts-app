@@ -175,6 +175,10 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 							'& .MuiSvgIcon-root': {
 								color: selectedIndex === 0 ? '#5ADFCB' : 'white',
 							},
+							'&.Mui-selected, &.Mui-focusVisible': {
+								outline: 'none !important',
+								bgcolor: 'tranparent', // subtle background color for focused or selected item
+							},
 						}}
 					/>
 					<BottomNavigationAction
@@ -188,6 +192,10 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 							},
 							'& .MuiSvgIcon-root': {
 								color: selectedIndex === 1 ? '#5ADFCB' : 'white',
+							},
+							'&.Mui-selected, &.Mui-focusVisible': {
+								outline: 'none',
+								bgcolor: 'tranparent', // subtle background color for focused or selected item
 							},
 						}}
 					/>
@@ -203,6 +211,11 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 							'& .MuiSvgIcon-root': {
 								color: selectedIndex === 2 ? '#5ADFCB' : 'white',
 							},
+							'&.Mui-selected, &.Mui-focusVisible': {
+								outline: 'none',
+								bgcolor: 'tranparent', // subtle background color for focused or selected item
+								borderRadius: '12px',
+							},
 						}}
 					/>
 					<BottomNavigationAction
@@ -216,6 +229,11 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 							},
 							'& .MuiSvgIcon-root': {
 								color: selectedIndex === 3 ? '#5ADFCB' : 'white',
+							},
+							'&.Mui-selected, &.Mui-focusVisible': {
+								outline: 'none',
+								bgcolor: 'tranparent', // subtle background color for focused or selected item
+								borderRadius: '12px',
 							},
 						}}
 					/>
