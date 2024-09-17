@@ -138,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 			{isMobile && (
 				<BottomNavigation
 					value={selectedIndex}
-					onChange={(event, newValue) => {
+					onChange={(_, newValue) => {
 						handleScroll(
 							newValue === 0
 								? 'home'
