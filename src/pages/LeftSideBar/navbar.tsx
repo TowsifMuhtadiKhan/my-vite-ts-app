@@ -12,6 +12,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import PersonIcon from '@mui/icons-material/Person';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import WorkIcon from '@mui/icons-material/Work';
 
 interface NavbarProps {
 	selectedIndex: number;
@@ -19,7 +20,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
-	const isMobile = useMediaQuery('(max-width:600px)');
+	const isMobile = useMediaQuery('(max-width:900px)');
 
 	return (
 		<>
@@ -33,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 						transform: 'translateY(-50%)',
 						width: '100%',
 						maxWidth: '200px',
-						bgcolor: '#000106',
+
 						color: 'white',
 						padding: 2,
 						display: 'flex',
@@ -117,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 									borderLeft: selectedIndex === 3 ? '2px solid #5ADFCB' : 'none',
 								}}
 							>
-								<WorkHistoryIcon sx={{ fontSize: '35px' }} />
+								<WorkIcon sx={{ fontSize: '35px' }} />
 								{selectedIndex === 3 && (
 									<Typography
 										sx={{
@@ -126,6 +127,28 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 										}}
 									>
 										Experience
+									</Typography>
+								)}
+							</ListItemButton>
+						</ListItem>
+
+						<ListItem disablePadding>
+							<ListItemButton
+								onClick={() => handleScroll('projects', 4)}
+								sx={{
+									color: selectedIndex === 4 ? '#5ADFCB' : 'white',
+									borderLeft: selectedIndex === 4 ? '2px solid #5ADFCB' : 'none',
+								}}
+							>
+								<WorkHistoryIcon sx={{ fontSize: '35px' }} />
+								{selectedIndex === 4 && (
+									<Typography
+										sx={{
+											ml: 1,
+											fontWeight: selectedIndex === 4 ? 'bold' : 'normal',
+										}}
+									>
+										Projects
 									</Typography>
 								)}
 							</ListItemButton>
@@ -146,7 +169,9 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 								? 'aboutMe'
 								: newValue === 2
 								? 'skills'
-								: 'experience',
+								: newValue === 3
+								? 'experience'
+								: 'projects',
 							newValue
 						);
 					}}
@@ -229,6 +254,25 @@ const Navbar: React.FC<NavbarProps> = ({ selectedIndex, handleScroll }) => {
 							},
 							'& .MuiSvgIcon-root': {
 								color: selectedIndex === 3 ? '#5ADFCB' : 'white',
+							},
+							'&.Mui-selected, &.Mui-focusVisible': {
+								outline: 'none',
+								bgcolor: 'tranparent', // subtle background color for focused or selected item
+								borderRadius: '12px',
+							},
+						}}
+					/>
+					<BottomNavigationAction
+						label="Projects"
+						icon={<WorkHistoryIcon />}
+						sx={{
+							color: selectedIndex === 4 ? '#5ADFCB' : 'white',
+							'& .MuiBottomNavigationAction-label': {
+								color: selectedIndex === 4 ? '#5ADFCB' : 'white',
+								fontWeight: selectedIndex === 4 ? 'bold' : 'normal',
+							},
+							'& .MuiSvgIcon-root': {
+								color: selectedIndex === 4 ? '#5ADFCB' : 'white',
 							},
 							'&.Mui-selected, &.Mui-focusVisible': {
 								outline: 'none',

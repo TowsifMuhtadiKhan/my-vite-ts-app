@@ -15,8 +15,8 @@ const MainBody = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					height: 'auto',
-					minHeight: { xs: 'auto', md: '100vh' }, // Minimum height to fill the viewport
-					overflowY: { xs: 'auto', md: 'hidden' }, // No scroll on medium and larger devices
+					minHeight: { xs: 'auto', md: '100vh' },
+					overflowY: { xs: 'auto', md: 'hidden' },
 				}}
 			>
 				<LeftPart />

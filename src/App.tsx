@@ -1,7 +1,13 @@
+import Footer from './pages/Footer';
 import MainBody from './pages/MainBody';
 
 function App() {
-	return <MainBody />;
+	return (
+		<>
+			<MainBody />
+			<Footer />
+		</>
+	);
 }
 
 export default App;

@@ -1,4 +1,6 @@
-import { Card, Typography, Box, Chip } from '@mui/material';
+import { Card, Typography, Box, Chip, Link } from '@mui/material';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { useState } from 'react';
 
 interface ExperienceCardProps {
 	position: string;
@@ -6,6 +8,7 @@ interface ExperienceCardProps {
 	duration: string;
 	description: string;
 	skills: string[];
+	url: string;
 }
 
 const ExperienceCard = ({
@@ -14,7 +17,9 @@ const ExperienceCard = ({
 	duration,
 	description,
 	skills,
+	url,
 }: ExperienceCardProps) => {
+	const [hover, setHover] = useState(false);
 	return (
 		<Card
 			sx={{
@@ -24,13 +29,31 @@ const ExperienceCard = ({
 				position: 'relative',
 				borderRadius: '15px',
 				maxWidth: 500,
-				mt: 5,
+				mt: 3,
 			}}
 		>
-			<Typography variant="h5" fontWeight={'700'}>
-				{position}
-			</Typography>
-			<Typography variant="subtitle1">{company}</Typography>
+			<Link href={url} style={{ textDecoration: 'none', color: 'inherit' }}>
+				<Typography
+					fontSize={'18px'}
+					fontWeight={'600'}
+					onMouseEnter={() => setHover(true)}
+					onMouseLeave={() => setHover(false)}
+					style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+					color={hover ? '#5ADFCB' : ''}
+					mb={0.5}
+				>
+					{position}, {company}
+					<ArrowOutwardIcon
+						sx={{
+							ml: 1,
+							transform: hover ? 'translateY(-4px)' : 'translateY(0)',
+							transition: 'transform 0.3s ease-in-out',
+							fontSize: '16px',
+						}}
+					/>
+				</Typography>
+			</Link>
+			{/* <Typography variant="subtitle1">{company}</Typography> */}
 			<Typography variant="subtitle2" sx={{ mb: 1 }}>
 				{duration}
 			</Typography>

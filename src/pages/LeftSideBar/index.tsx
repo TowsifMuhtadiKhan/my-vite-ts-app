@@ -59,8 +59,8 @@ const LeftPart = () => {
 				{' '}
 				<Typography
 					fontSize={{
-						xs: '40px',
-						md: '46px',
+						xs: '30px',
+						md: '48px',
 					}}
 					fontWeight={'700'}
 				>
@@ -68,8 +68,8 @@ const LeftPart = () => {
 				</Typography>
 				<Typography
 					fontSize={{
-						xs: '30px',
-						md: '36px',
+						xs: '24px',
+						md: '26px',
 					}}
 					fontWeight={'500'}
 					color="#5ADFCB"
@@ -80,7 +80,7 @@ const LeftPart = () => {
 					fontSize={'16px'}
 					fontWeight={'400'}
 					mt={'26px'}
-					color="rgba(255, 255, 255, 0.5)"
+					color="rgba(255, 255, 255, 0.6)"
 					pr={2}
 				>
 					{data.description}

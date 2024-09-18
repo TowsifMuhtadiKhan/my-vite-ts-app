@@ -41,15 +41,41 @@
 			"position": "Frontend Engineer",
 			"company": "Sense & Respond Software LLC",
 			"duration": "November 2023 - Present",
-			"description": "Enhancing user experiences and developing skills while working at Sense & Respond Software LLC.",
-			"skills": ["React.js", "Redux Toolkit", "Material UI", "TypeScript", "API"]
+			"description": "As a Frontend Engineer at Sense n Respond Software LLC, I specialize in frontend development, ensuring seamless functionality and precise fulfillment of project requirements.",
+			"skills": [
+				"React.js",
+				"Redux Toolkit",
+				"Material UI",
+				"TypeScript",
+				"API Integration",
+				"AWS",
+				"Responsive Design"
+			],
+			"url": "https://sensenrespond.com/"
 		},
 		{
 			"position": "Junior Web Developer",
 			"company": "CPSD Technologies Ltd.",
 			"duration": "February 2023 - October 2023",
-			"description": "Enhancing user experiences and developing skills while working at CPSD Technologies Ltd.",
-			"skills": ["HTML", "CSS", "Tailwind CSS", "jS", "API"]
+			"description": "At CPSD Technologies Ltd. in Chere, I am committed to developing my skills as a Junior Web Developer, focusing on crafting robust and user-friendly digital solutions.",
+			"skills": ["HTML", "CSS", "Tailwind CSS", "JavaScript", "API Integration"],
+			"url": "https://bd.linkedin.com/company/cpsd-technologies-ltd"
+		}
+	],
+	"projects": [
+		{
+			"title": "Furniture Fusion (Landing Page)",
+			"description": "Furniture Fusion is a dynamic and visually appealing web application built using React JS and Tailwind CSS. This project showcases the fusion of innovative design and functionality, offering users an immersive experience in the furniture world.",
+			"imageUrl": "https://drive.google.com/uc?export=view&id=12AoMK1iylOvH48Ly0prcXXaY2zByNdN_",
+			"tools": ["React.js", "Tailwind CSS"],
+			"url": "https://654132a5a32b8432a49ef708--idyllic-horse-2f46d0.netlify.app/"
+		},
+		{
+			"title": "Event Details Website",
+			"description": "This website offers an interactive platform for visualizing event data through dynamic charts and graphs. Users can easily analyze key metrics, track event trends, and gain valuable insights, making it an essential tool for event organizers and attendees alike.",
+			"imageUrl": "https://drive.google.com/uc?export=view&id=16bewGHg-ZeobvkyKI0yEAYQPRllzIJFb",
+			"tools": ["HTML", "CSS", "Chart.js"],
+			"url": "https://path-to-your-image.com/chatapp.jpg"
 		}
 	]
 }

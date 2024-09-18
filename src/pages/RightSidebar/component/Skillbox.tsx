@@ -13,8 +13,8 @@ const SkillBox = ({ title, skills }: SkillBoxProps) => {
 	return (
 		<Box
 			sx={{
-				mb: 2,
-				mt: 2,
+				mb: 5,
+
 				// background: 'linear-gradient(145deg, #333, #000106)',
 				borderRadius: '15px',
 				// p: '15px',
